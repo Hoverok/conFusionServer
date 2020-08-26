@@ -3,36 +3,35 @@ const Schema = mongoose.Schema;
 require('mongoose-currency').loadType(mongoose);
 const Currency = mongoose.Types.Currency;
 
-var promotionSchema = new Schema(
-  {
+var promotionSchema = new Schema({
     name: {
       type: String,
-      required: true,
+      required: true
     },
     image: {
       type: String,
-      required: true,
+      required: true
     },
     label: {
       type: String,
-      default: '',
+      default: ''
     },
     price: {
-        type: Currency,
-        required: true,
-        min: 0,
-      },
+      type: Currency,
+      required: true,
+      min: 0
+    },
     description: {
       type: String,
-      required: true,
+      required: true
     },
     featured: {
       type: Boolean,
-      default: false,
+      default: false
     }
-  },{
-    timestamps: true,
-  });
+  }, {
+  timestamps: true
+});
 
 var Promotions = mongoose.model('Promotion', promotionSchema);
 
